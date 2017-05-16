@@ -1,3 +1,6 @@
+html {
+  background-image: url("/images/lighthouse.jpg"); }
+
 ul.override, ol.override {
   text-align: left !important; }
 
