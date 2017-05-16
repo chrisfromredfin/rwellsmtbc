@@ -1,3 +1,12 @@
+ul.override, ol.override {
+  text-align: left !important; }
 
+img.circle {
+  display: block;
+  border-radius: 50%;
+  border: 2px solid black;
+  max-width: 50%;
+  height: auto;
+  margin: 0 auto 2em auto; }
 
 /*# sourceMappingURL=overrides.css.map */
