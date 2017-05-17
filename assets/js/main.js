@@ -103,6 +103,7 @@
             .css('top', '50%')
             .css('left', '0')
             .css('width', '100%')
+            .css('padding', '5%')
             .css('margin-top', ($headerTitle.outerHeight() / -2));
 
         });
@@ -179,7 +180,7 @@
       // Create bg and append it to body.
       $bg = $('<div class="main-bg" id="' + $this.attr('id') + '-bg"></div>')
         .css('background-image', (
-          'url("assets/css/images/overlay.png"), url("' + $primaryImg.attr('src') + '")'
+          'url("css/images/overlay.png"), url("' + $primaryImg.attr('src') + '")'
         ))
         .appendTo($body);
 
@@ -226,21 +227,30 @@
 
     });
 
-    // Lightboxes for icon-grid.
+    // Chris Additions
     $('.icons-grid li').hover(function(){
-      // Hovering
-      $(this).addClass('hovering');
+      $(this).css('cursor', 'pointer');
     }, function(){
-      // Depart Hovering
-      $(this).removeClass('hovering');
-    }).click(function(){
-      // When you click, open the lightbox.
-      $.colorbox({
-        html: $(this).find('.popup-info').html(),
-        maxWidth: "98%",
-        width: "800px"
+      $(this).css('cursor', 'none');
+    });
+
+    $('.icons-grid li').click(function(){
+      var $description = $(this).find('.description');
+      $('.icons-grid-container').append($description.clone(true));
+
+      $('.icons-grid').animate({opacity: 0}, 400, function(){
+        $('.icons-grid-container > .description').fadeIn(100);
       });
     });
+
+    $('.grid-close').click(function(e) {
+      e.preventDefault();
+      $('.icons-grid-container > .description').fadeOut(100);
+      $('.icons-grid-container > .description').remove();
+      $('.icons-grid').animate({opacity: 1}, 400);
+      return false;
+    });
+
   });
 
 })(jQuery);
