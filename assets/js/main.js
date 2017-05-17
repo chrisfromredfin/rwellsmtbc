@@ -227,28 +227,20 @@
 
     });
 
-    // Chris Additions
+    // Lightboxes for icon-grid.
     $('.icons-grid li').hover(function(){
-      $(this).css('cursor', 'pointer');
+      // Hovering
+      $(this).addClass('hovering');
     }, function(){
-      $(this).css('cursor', 'none');
-    });
-
-    $('.icons-grid li').click(function(){
-      var $description = $(this).find('.description');
-      $('.icons-grid-container').append($description.clone(true));
-
-      $('.icons-grid').animate({opacity: 0}, 400, function(){
-        $('.icons-grid-container > .description').fadeIn(100);
+      // Depart Hovering
+      $(this).removeClass('hovering');
+    }).click(function(){
+      // When you click, open the lightbox.
+      $.colorbox({
+        html: $(this).find('.popup-info').html(),
+        maxWidth: "98%",
+        width: "800px"
       });
-    });
-
-    $('.grid-close').click(function(e) {
-      e.preventDefault();
-      $('.icons-grid-container > .description').fadeOut(100);
-      $('.icons-grid-container > .description').remove();
-      $('.icons-grid').animate({opacity: 1}, 400);
-      return false;
     });
 
   });
