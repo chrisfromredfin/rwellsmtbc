@@ -237,7 +237,8 @@
       // When you click, open the lightbox.
       $.colorbox({
         html: $(this).find('.popup-info').html(),
-        maxWidth: "80%"
+        maxWidth: "98%",
+        width: "800px"
       });
     });
   });
