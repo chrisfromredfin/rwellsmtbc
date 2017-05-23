@@ -51,6 +51,10 @@ a.ext:after {
   padding: 0;
   border: 0; }
 
+img.autoscale {
+  max-width: 98%;
+  height: auto; }
+
 /*
     Colorbox Core Style:
     The following CSS is consistent between example themes and should not be altered.
