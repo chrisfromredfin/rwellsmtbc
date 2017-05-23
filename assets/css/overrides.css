@@ -41,6 +41,16 @@ a.ext:after {
     .icons-grid li.hovering h3 {
       color: #898e90; }
 
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0; }
+
 /*
     Colorbox Core Style:
     The following CSS is consistent between example themes and should not be altered.
